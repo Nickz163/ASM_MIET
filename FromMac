@@ -1,0 +1,54 @@
+    а)  y = -x-1;
+
+    0x100000d26 <+6>:  movl   %edi, -0x4(%rbp)
+->  0x100000d29 <+9>:  subl   -0x4(%rbp), %eax
+    0x100000d2c <+12>: subl   $0x1, %eax
+    0x100000d2f <+15>: movl   %eax, -0x8(%rbp)
+
+    0x100000d32 <+18>: movl   -0x8(%rbp), %eax // нужно ли это?
+
+
+
+
+    б) y = x*13;
+
+    0x100000d44 <+4>:  movl   %edi, -0x4(%rbp)
+->  0x100000d47 <+7>:  imull  $0xd, -0x4(%rbp), %edi
+    0x100000d4b <+11>: movl   %edi, -0x8(%rbp)
+
+    0x100000d4e <+14>: movl   -0x8(%rbp), %eax
+
+
+    в)y = (x<7)?0:x;
+
+ -> 0x100000d67 <+7>:  cmpl   $0x7, -0x4(%rbp)
+    0x100000d6b <+11>: jge    0x100000d7b               ; <+27> at main.cpp:24
+    0x100000d71 <+17>: xorl   %eax, %eax //?
+    0x100000d73 <+19>: movl   %eax, -0xc(%rbp)
+    0x100000d76 <+22>: jmp    0x100000d81               ; <+33> at main.cpp:24
+    0x100000d7b <+27>: movl   -0x4(%rbp), %eax
+    0x100000d7e <+30>: movl   %eax, -0xc(%rbp)
+
+
+
+
+    ЗАДАНИЕ №3
+     1)Y = -X-1;
+
+     0x100000e23 <+51>:  movl   $0x1, %edi //?
+     0x100000e28 <+56>:  xorl   %ecx, %ecx //?
+
+     0x100000e2a <+58>:  subl   0x208(%rip), %ecx         ; X
+     0x100000e30 <+64>:  subl   $0x1, %ecx
+     0x100000e33 <+67>:  movl   %ecx, 0x203(%rip)           ; Y
+     0x100000e39 <+73>:  movl   %eax, -0x18(%rbp)//?
+
+     2)
+     0x100000eb9 <+9>:  movb   %al, -0x1(%rbp)
+->   0x100000ebc <+12>: movsbl -0x1(%rbp), %ecx // копировать со знаковым расширением
+     0x100000ec0 <+16>: subl   %ecx, %edi
+     0x100000ec2 <+18>: subl   $0x1, %edi
+     0x100000ec5 <+21>: movb   %dil, %al
+     0x100000ec8 <+24>: movb   %al, -0x2(%rbp)
+
+       0x100000ecb <+27>: movsbl -0x2(%rbp), %eax ? 
