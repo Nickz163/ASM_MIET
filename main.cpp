@@ -69,11 +69,11 @@ int main()
     // Задание 3
     Y = -X-1;
 
-    char c = ex3(1);
-    short s = ex3(1);
-    long l = ex3(1);
-    long long ll = ex3(1);
-    long double ld = ex3(1);
+    ex3((char)1);
+    ex3((short)1);
+    ex3((long)1);
+    ex3((long long)1);
+    ex3((long double)1);
 
     // Задание 5
 
