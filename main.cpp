@@ -1,7 +1,3 @@
-#include <iostream>
-#define EX3(type) (type xi = 1; type yi = -x-1;)
-using namespace std;
-
 // EX 1
 
 int ex1a(int x)
