@@ -39,11 +39,6 @@ void func(T a, T b)
     cout <<"Тип результата: "<< typeid(((a+b)*(a+b)-(a*a+2*a*b))/b/b).name() << endl;
     cout << "a = "<<a<<", b = "<<b<<", значение выражения = " <<
             ((a+b)*(a+b)-(a*a+2*a*b))/b/b <<setprecision(20)<< endl;
-T c =(a+b);
-T c3 = (a+b);
-T c3t = c*c3;
-T c1 =(a*a+2*a*b);
-        T c2=c3t-c1;
 }
 
 int main()
