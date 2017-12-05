@@ -14,9 +14,11 @@ Cоздайте, используя язык высокого уровня, ма
 
 Содержимое памяти (Обозреватель памяти QT Creator)
 
-67 45 23 01  68 45 23 01  69 45 23 01  6a 45 23 01
-6b 45 23 01  6c 45 23 01  6d 45 23 01  6e 45 23 01
-6f 45 23 01  70 45 23 01
+ef cd ab 89 67 45 23 01  f0 cd ab 89 67 45 23 01
+f1 cd ab 89 67 45 23 01  f2 cd ab 89 67 45 23 01
+f3 cd ab 89 67 45 23 01  f4 cd ab 89 67 45 23 01
+f5 cd ab 89 67 45 23 01  f6 cd ab 89 67 45 23 01
+f7 cd ab 89 67 45 23 01  f8 cd ab 89 67 45 23 01
 
 */
 
@@ -28,19 +30,19 @@ using namespace std;
 int main()
 {
     const int C = 10;
-    int alpha[C];
+    long long alpha[C];
     for (int i = 0; i < 10; i++)
-        alpha[i] = i+0x01234567;
+        alpha[i] = i+0x0123456789abcdef;
 
     //1
 
-    cout << "1. Размер элемента массива: "<<sizeof(alpha[0]) << " байта" << endl;
+    cout << "1. Размер элемента массива: "<<sizeof(alpha[0]) << " байт" << endl;
 
     //2
 
     int razn = (unsigned long long)&alpha[1] - (unsigned long long)&alpha[0];
     cout << "2. Адреса соседних элементов массива отличаются на "
-         << razn << " байта" << endl;
+         << razn << " байт" << endl;
 
     //3
 

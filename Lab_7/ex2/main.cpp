@@ -13,7 +13,6 @@
 */
 
 #include <iostream>
-#include <climits>
 
 using namespace std;
 
@@ -38,7 +37,7 @@ int main()
                                 "jmp begin_iteration\n"
                             "end_loop:\n"
                             :[M] "+r" (max), [I]"+r"(i)
-                            :[A]"r"(alpha), [C]"r"(C)
+                            :[A]"r"(alpha)
                             :"cc"
                         );
     cout << "Максимальный элемент массива = " << max << endl;
