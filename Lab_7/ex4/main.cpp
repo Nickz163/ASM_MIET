@@ -57,14 +57,14 @@ int main()
                                 "fxch\n"                          // st(0) = notMAX, st(1) = MAX
 
     /*small : ...............*/ "small:\n"
-                                "fstp %[BUF]\n"                   // st(0) = MAX
+                                "fstpl %[BUF]\n"                   // st(0) = MAX
 
     /*end_iter: .............*/ "end_iter:\n"
                                 "subq $2, %[I]\n"                 // Шаг = -2
 
        /*begin_iteration*/      "jmp begin_iteration\n"
     /*end_loop : ............*/ "end_loop:\n"
-                                "fstp %[M]\n"                      // max = st(0)
+                                "fstpl %[M]\n"                      // max = st(0)
 
                             :[M] "=m" (max), [I]"+r"(i), [BUF]"+m"(buf)
                             :[B]"r"(beta), [K]"r"(k)

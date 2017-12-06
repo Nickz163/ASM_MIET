@@ -29,9 +29,10 @@ int main()
                         "xorq %[A], %[A]\n"      // Получаем 0
 
                         "begin_iteration:\n"
-                        "movq %[A], (%[M], %[J], 8)\n"
-                            "cmpq %[J], %[N]\n"
+						"cmpq %[J], %[N]\n"
                             "je end_loop\n"     // Если N = 0
+                        "movq %[A], (%[M], %[J], 8)\n"
+                            
                             "addq %[X], %[A]\n" // ai+1 = ai + x
                             "incq %[J]\n"       // Декремент
                             "jmp begin_iteration\n"
